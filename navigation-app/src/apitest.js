@@ -5,21 +5,28 @@ import { HttpClient } from 'aurelia-http-client';
 export class API {
   heading = 'TestAPI';
   posts = [];
-  post = "staticen test";
+  posttest = "staticen test";
   url = 'http://localhost:62416/api/values';
 
   constructor(http) {
     this.http = http;
   }
-  loadPosts() {
-   // return 2;
-   this.posts = this.http.jsonp(this.url, "jsonp").content;
-   return this.posts;
-  }
-  activate() {
-    console.log("bla");
-    return this.loadPosts();
 
+  
+  activate() {
+   var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://localhost:62416/api/values",
+  "method": "GET",
+  "headers": {}
+  };
+  
+  $.ajax(settings).done(function (response) {
+   this.posts = response;
+   console.log(this.posts);
+   return this.posts;
+   });
   }
 
   canDeactivate() {

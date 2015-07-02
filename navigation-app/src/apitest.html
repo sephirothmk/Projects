@@ -3,11 +3,11 @@
         <h2>${heading}</h2>
         <div class="row au-stagger">
             <p>Test</p>
-            <div class="col-sm-6 col-md-3 au-animate">
+            <div class="col-sm-6 col-md-3 au-animate" repeat.for="post of posts">
                 <p>Test2</p>
                 <p innerhtml.bind="post"></p>
                 <p>yuj</p>
-                <p>${post}</p>
+                <p>${posttest}</p>
             </div>
         </div>
     </section>
