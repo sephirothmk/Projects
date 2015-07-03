@@ -3,11 +3,13 @@
         <h2>${heading}</h2>
         <div class="row au-stagger">
             <p>Test</p>
-            <div class="col-sm-6 col-md-3 au-animate" repeat.for="post of posts">
+            <button click.trigger="sayHello()">Say Hello</button>
+            <div class="col-sm-6 col-md-3 au-animate">
                 <p>Test2</p>
-                <p innerhtml.bind="post"></p>
+                <p innerHTML.bind="API.glupost"></p>
                 <p>yuj</p>
                 <p>${posttest}</p>
+                
             </div>
         </div>
     </section>
